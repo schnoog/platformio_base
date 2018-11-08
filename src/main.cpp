@@ -1,13 +1,16 @@
 #include <Arduino.h>
 
+#define UseWifi 1
+
 #include "wifi_and_ota.h"
+#include "setup_master.h"
+#include "loop_master.h"
 
 
 void setup() {
-    Serial.begin(115200);
-    wifi_setup();  
+    setup_master(); 
 }
 
 void loop() {
-    ota.loop();
+    loop_master();
 }
